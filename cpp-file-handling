@@ -1,0 +1,49 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    ifstream file;
+    string filename, line, word, search;
+    int lines = 0, words = 0, found = 0;
+
+    cout << "Enter file name: ";
+    cin >> filename;
+
+    file.open(filename);
+    if (!file) {
+        cout << "Error: Cannot open file.\n";
+        return 0;
+    }
+
+    // Count lines
+    while (getline(file, line)) {
+        lines++;
+    }
+    file.close();
+
+    // Count words and search word
+    cout << "Enter word to search: ";
+    cin >> search;
+
+    file.open(filename);
+    if (!file) {
+        cout << "Error: Cannot open file.\n";
+        return 0;
+    }
+
+    while (file >> word) {
+        words++;
+        if (word == search)
+            found++;
+    }
+    file.close();
+
+    cout << "\nTotal Lines: " << lines;
+    cout << "\nTotal Words: " << words;
+    cout << "\n\"" << search << "\" found: " << found << " times\n";
+
+    return 0;
+}
+
