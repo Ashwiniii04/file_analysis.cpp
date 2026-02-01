@@ -1,0 +1,25 @@
+# C++ File Analysis Program
+
+A simple C++ program that reads a text file and:
+- Counts the total number of lines
+- Counts the total number of words
+- Searches for a specific word and reports how many times it appears
+
+## Features
+- Uses file handling (`ifstream`)
+- Reads file line by line and word by word
+- Handles basic error checking if the file does not exist
+- Demonstrates string processing in C++
+
+## Concepts Used
+- File handling in C++
+- Strings
+- Loops and conditionals
+- Input and output streams
+
+## How to Run
+
+1. Make sure the text file you want to analyze is in the same directory as the program.
+2. Compile the program:
+   ```bash
+   g++ file_analysis.cpp -o file_analysis
